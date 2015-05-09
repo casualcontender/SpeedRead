@@ -43,14 +43,17 @@ public class LoginActivity extends ActionBarActivity {
 
     public void attemptLogin() {
         View focusView = null;
-        boolean passInvalid = false;
-        boolean userInvalid = false;
+        boolean invalid = false;
         int numFails = 0;
-        passInvalid = false;
 
         // Store values at the time of the login attempt.
         String email = userNameView.getText().toString();
         String password = passwordView.getText().toString();
+
+        if (invalid == true) {
+            Intent i = new Intent(this, MainActivity.class);
+            startActivity(i);
+        }
 
         // Reset errors.
         userNameView.setError(null);
@@ -60,22 +63,25 @@ public class LoginActivity extends ActionBarActivity {
         if (!isPasswordValid(password)) {
             passwordView.setError(getString(R.string.error_invalid_password));
             focusView = passwordView;
-            passInvalid = true;
-
+            invalid = true;
         }
 
         if (!isEmailValid(email)) {
             userNameView.setError("Invalid Username");
             focusView = userNameView;
-            passInvalid = true;
+            invalid = true;
         }
 
-        if (numFails < 2) {
+        if (invalid == false) {
             database.userHashMap.put(email, password);
             Toast.makeText(getBaseContext(), "Account Created Successfully", Toast.LENGTH_LONG).show();
         }
-        Intent i = new Intent(this, MainActivity.class);
-        startActivity(i);
+
+
+    }
+
+    private void returnToMain() {
+
     }
 
     private boolean isPasswordValid(String password) {
