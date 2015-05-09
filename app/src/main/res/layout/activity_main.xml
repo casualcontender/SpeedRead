@@ -1,0 +1,51 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create Account"
+        android:id="@+id/createAcctButton"
+        android:minHeight="75dp"
+        android:minWidth="150dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Place Hold"
+        android:id="@+id/placeHoldButton"
+        android:minHeight="75dp"
+        android:minWidth="150dp"
+        android:layout_below="@+id/createAcctButton"
+        android:layout_alignRight="@+id/manageSystemButton"
+        android:layout_alignEnd="@+id/manageSystemButton"
+        android:layout_marginTop="35dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel Hold"
+        android:id="@+id/cancelHoldButton"
+        android:minHeight="75dp"
+        android:minWidth="150dp"
+        android:layout_below="@+id/placeHoldButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Manage System"
+        android:id="@+id/manageSystemButton"
+        android:layout_below="@+id/cancelHoldButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="54dp"
+        android:maxWidth="150dp"
+        android:minHeight="75dp" />
+</RelativeLayout>
