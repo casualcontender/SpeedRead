@@ -1,5 +1,6 @@
 package edu.csumb.mattw.speedread;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -12,9 +13,11 @@ public class Database {
     //holds books with title as key
     public static HashMap<String, Book> bookHashMap = new HashMap<String, Book>();
 
-
     //hold username and password
     public static HashMap<String, String> userHashMap = new HashMap<String, String>();
+
+    //hold log
+    public static ArrayList<String> log = new ArrayList<String>();
 
     static {
         userHashMap.put("a@lice5", "@csit100");

@@ -34,7 +34,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
     public void onClick(View v) {
         if (v.getId() == R.id.createAcctButton) {
-            Intent i = new Intent(this, LoginActivity.class);
+            Intent i = new Intent(this, RegisterActivity.class);
             startActivity(i);
         }
         if (v.getId() == R.id.placeHoldButton) {
