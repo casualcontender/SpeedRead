@@ -17,6 +17,9 @@
     <string name="invalid_username_message">Username Does Not Meet Requirements</string>
     <string name="username_taken_message">Username is Already Taken</string>
     <string name="success_message">Account Created Successfully</string>
+    <string name="wrong_username_message">Wrong Username or Password</string>
+
+    wrong_username_message
 
     <string name="ok">OK</string>
 

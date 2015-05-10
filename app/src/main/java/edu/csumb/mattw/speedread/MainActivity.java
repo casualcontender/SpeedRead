@@ -46,7 +46,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             startActivity(i);
         }
         if (v.getId() == R.id.manageSystemButton) {
-            Intent i = new Intent(this, ManageActivity.class);
+            Intent i = new Intent(this, ManageLanding.class);
             startActivity(i);
         }
     }

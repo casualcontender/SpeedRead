@@ -8,4 +8,6 @@
     <string name="title_activity_login">LoginActivity</string>
     <string name="checkout_time">Medium Text</string>
     <string name="error_invalid_username">Invalid Username</string>
+    <string name="title_activity_manage_main">ManageMain</string>
+    <string name="title_activity_log_fragment">LogFragment</string>
 </resources>

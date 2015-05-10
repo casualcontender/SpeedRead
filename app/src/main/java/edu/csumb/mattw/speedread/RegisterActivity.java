@@ -30,7 +30,6 @@ public class RegisterActivity extends ActionBarActivity  {
         setContentView(R.layout.activity_register);
         dataHelperAdapter = new DataHelperAdapter(this);
 
-
         //createDatabase();
 
         // Set up the login form.
@@ -100,8 +99,6 @@ public class RegisterActivity extends ActionBarActivity  {
             }
         });
         AlertDialog invPasswordDialog = invPasswordBuilder.create();
-
-
 
 
         // Store values at the time of the login attempt.

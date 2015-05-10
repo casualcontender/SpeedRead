@@ -37,7 +37,7 @@
             android:label="@string/title_activity_hold" >
         </activity>
         <activity
-            android:name=".ManageActivity"
+            android:name=".ManageLanding"
             android:label="@string/title_activity_manage" >
         </activity>
         <activity
@@ -53,6 +53,15 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name=".ManageMain"
+            android:label="@string/title_activity_manage_main" >
+        </activity>
+        <activity
+            android:name=".LogFragment"
+            android:label="@string/title_activity_log_fragment" >
+        </activity>
     </application>
 
 </manifest>
