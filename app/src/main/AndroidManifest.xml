@@ -55,12 +55,16 @@
             android:value="@integer/google_play_services_version" />
 
         <activity
-            android:name=".ManageMain"
+            android:name=".ManageLog"
             android:label="@string/title_activity_manage_main" >
         </activity>
         <activity
             android:name=".LogFragment"
             android:label="@string/title_activity_log_fragment" >
+        </activity>
+        <activity
+            android:name=".ManageMain"
+            android:label="@string/title_activity_manage_main" >
         </activity>
     </application>
 

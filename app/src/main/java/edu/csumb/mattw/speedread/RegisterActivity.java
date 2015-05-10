@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -102,7 +103,7 @@ public class RegisterActivity extends ActionBarActivity  {
 
 
         // Store values at the time of the login attempt.
-        String email = userNameView.getText().toString();
+        String userName = userNameView.getText().toString();
         String password = passwordView.getText().toString();
 
         // Reset errors.
@@ -115,8 +116,8 @@ public class RegisterActivity extends ActionBarActivity  {
             invPasswordDialog.show();
         }
 
-        boolean emailTaken = emailTaken(email);
-        boolean emailValid = isEmailValid(email);
+        boolean emailTaken = emailTaken(userName);
+        boolean emailValid = isEmailValid(userName);
 
         if (emailTaken || !emailValid) {
             userInvalid = true;
@@ -130,7 +131,7 @@ public class RegisterActivity extends ActionBarActivity  {
 
         if (pWordInvalid == false && userInvalid == false) {
             //addUser(email, password);
-            database.userHashMap.put(email,password);
+            database.userHashMap.put(userName,password);
             addToLog(newAcct);
             createAcctDialog.show();
         }
@@ -217,8 +218,10 @@ public class RegisterActivity extends ActionBarActivity  {
     }
 
     public void addToLog(String event) {
-        Calendar calendar = Calendar.getInstance();
-        java.sql.Date currentTimestamp = new java.sql.Date(calendar.getTime().getTime());
-        database.log.add(event + currentTimestamp);
+        String userName = userNameView.getText().toString();
+        String dateStamp = (DateFormat.format("MM/dd/yyyy", new java.util.Date()).toString());
+        String timeStamp = (DateFormat.format("hh:mm", new java.util.Date()).toString());
+        UserLog temp = new UserLog(event, timeStamp, dateStamp, userName);
+        database.log.add(temp);
     }
 }

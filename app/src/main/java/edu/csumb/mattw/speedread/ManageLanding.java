@@ -1,9 +1,6 @@
 package edu.csumb.mattw.speedread;
 
-import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -44,29 +41,20 @@ public class ManageLanding extends ActionBarActivity {
         // Store values at the time of the login attempt.
         String userName = userNameView.getText().toString();
         String password = passwordView.getText().toString();
-        Activity getActivity;
 
-        //Alert for wrong username/password
-        AlertDialog.Builder wrongLoginBuilder = new AlertDialog.Builder(context);
-        wrongLoginBuilder.setMessage(R.string.wrong_username_message);
-        wrongLoginBuilder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                //finish();
-            }
-        });
-        AlertDialog takenUsernameDialog = wrongLoginBuilder.create();
 
 
         if (database.adminHashMap.containsKey(userName) && database.adminHashMap.get(userName).equals(password)) {
-            Intent i = new Intent(this, ManageMain.class);
+            Intent i = new Intent(this, ManageLog.class);
             startActivity(i);
         } else if (attempt < 1) {
             attempt++;
-            wrongLoginBuilder.show();
+            Message.message(this, "Wrong username or password");
         } else {
             Intent i = new Intent(this, MainActivity.class);
             startActivity(i);
         }
+
 
     }
 
